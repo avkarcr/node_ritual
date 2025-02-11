@@ -4,14 +4,6 @@ tee <<EOF >> ~/.bashrc
 PS1="\[\e[1;34m\]ritual:\w\\\\$\[\e[0m\] "
 EOF
 sudo apt update && sudo apt install tmux -y
-if ! grep -q 'if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then' /etc/profile; then
-sudo tee -a /etc/profile <<'EOF'
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-tmux attach -t main || tmux new -s main
-fi
-EOF
-fi
-tmux new -s main
 sudo echo "alias on='tmux set-option -g mouse on'" >> /etc/profile
 sudo echo "alias off='tmux set-option -g mouse off'" >> /etc/profile
 instruction_text='''
@@ -27,3 +19,12 @@ off - прокрутка запрещена, разрешено выделени
 '''
 echo -e "${instruction_text}\n"
 echo -e "Эта инструкция будет сохранена в текстовом файле по адресу: ~/instruction.txt.\n"
+read -n 1 -s -r -p "Нажмите любую клавишу для продолжения..."
+if ! grep -q 'if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then' /etc/profile; then
+sudo tee -a /etc/profile <<'EOF'
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+tmux attach -t main || tmux new -s main
+fi
+EOF
+fi
+tmux new -s main
