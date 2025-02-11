@@ -17,8 +17,11 @@ off - прокрутка запрещена, разрешено выделени
 Чтобы выделить много текста, войдите в "режим выделения" с помощью комбинации клавиш ctrl+b, [.
 Выход из режима выделения - ESC.
 '''
+clear
+echo -e "\n\e[1m\e[34m"
 echo -e "${instruction_text}\n"
 echo -e "Эта инструкция будет сохранена в текстовом файле по адресу: ~/instruction.txt.\n"
+echo -e "\e[0m\n"
 read -n 1 -s -r -p "Нажмите любую клавишу для продолжения..."
 if ! grep -q 'if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then' /etc/profile; then
 sudo tee -a /etc/profile <<'EOF'
