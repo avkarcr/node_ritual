@@ -17,7 +17,17 @@
   source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/prepare.sh')
   ```
 
-### 3. **Запуск ноды (контейнер Hello World)**
+### 3. **Установка окружения Python**
   ```bash
-  source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/1_hello_world.sh')
+  source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/1_python.sh')
+  ```
+
+### 4. **Запуск off-chain ноды (контейнер Hello World)**
+  ```bash
+  source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/2_hello_world.sh')
+  ```
+
+### 5. **Запуск on-chain ноды (контейнер Anvil)**
+  ```bash
+  source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/3_anvil.sh')
   ```
