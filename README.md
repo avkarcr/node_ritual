@@ -17,3 +17,7 @@
   source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/prepare.sh')
   ```
 
+### 3. **Запуск ноды (контейнер Hello World)**
+  ```bash
+  source <(wget -qO- 'https://raw.githubusercontent.com/avkarcr/node_ritual/refs/heads/main/1_hello_world.sh')
+  ```

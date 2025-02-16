@@ -1,3 +1,4 @@
+#!/bin/bash
 echo -e "\n\e[1m\e[34mПодготовка сервера: 1. Установка и настройка tmux...\e[0m\n"
 sleep 2
 tee <<EOF >> ~/.bashrc
@@ -30,4 +31,4 @@ tmux attach -t main || tmux new -s main
 fi
 EOF
 fi
-tmux new -s main
+tmux attach -t main || tmux new -s main
